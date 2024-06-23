@@ -2,6 +2,10 @@ import { promises as fsPromises } from "fs";
 import { Roster } from "./Roster";
 import fflate from "fflate";
 
+/**
+ *  This is a specialized file reader that given a path
+ *  will search a .rosz file and try to find a roster inside.
+ */
 export class FileReader {
 
     async read(path: string) : Promise<Roster> {
@@ -24,4 +28,4 @@ export class FileReader {
 
         throw new Error("No roster found");
     }
-}
+};
